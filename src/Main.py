@@ -100,17 +100,21 @@ def add_quote_to_json(file_path, quote):
 
 # Example usage
 num_quotes = 0
+display_quote = 0
 
 while True:
     num_quotes += 1
+    display_quote += 0
     quote = fetch_random_quote()
     if quote:
         add_quote_to_json(usable_file_path, quote)
-        print("Quote saved successfully. | The number of quotes generated is", num_quotes)
+        print("Quote saved successfully. | The number of quotes generated is", display_quote)
     else:
         print("Failed to generate and save quote.")
 
-    if num_quotes % 10000 == 0:
+    if num_quotes % 1000 == 0:
         choice = input("Do you want to continue generating quotes? (Y/N): ")
         if choice.lower() != "y":
             break
+        else:
+            num_quotes = 0
