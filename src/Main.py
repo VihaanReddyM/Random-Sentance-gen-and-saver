@@ -17,7 +17,7 @@ else:
     json_format = {}
     file_extention = '.txt'
     
-default_file_name ='output' + current_time + file_extention
+default_file_name ='Sentances-' + current_time + file_extention
 
 def fetch_random_quote():
     try:
