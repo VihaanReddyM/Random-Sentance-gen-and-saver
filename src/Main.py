@@ -30,7 +30,7 @@ def fetch_random_quote():
             print("Failed to fetch random quote from the API.")
             return None
     except requests.exceptions.Timeout:
-        print("Request timed out. Restarting the program...")
+        print("Request timed out.  the program...")
         time.sleep(2)  # Wait for a few seconds before restarting
         return fetch_random_quote()
     except requests.exceptions.RequestException as e:
@@ -78,11 +78,11 @@ def add_quote_to_json(file_path, quote):
                     try:
                         json_data = json.load(json_file)
                     except json.JSONDecodeError:
-                        json_data = json_format
+                        json_data = {"sentances": []}
             else:
-                json_data = {json_format}
+                json_data = {"sentances": []}
 
-            json_data["Sentances"].append(quote)
+            json_data["sentances"].append(quote)
 
             with open(file_path, "w", encoding="utf-8") as json_file:
                 json.dump(json_data, json_file, indent=4)
